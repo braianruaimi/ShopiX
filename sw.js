@@ -1,9 +1,11 @@
-const STATIC_CACHE = 'shopix-static-v2';
+const STATIC_CACHE = 'shopix-static-v3';
 const APP_SHELL = [
   './',
   './index.html',
+  './js/app.js',
   './manifest.json',
-  './images/Gemini_Generated_Image_yp1nmsyp1nmsyp1n.png'
+  './images/Gemini_Generated_Image_yp1nmsyp1nmsyp1n.png',
+  './vendor/tailwind.min.js'
 ];
 
 self.addEventListener('install', event => {
