@@ -522,7 +522,7 @@
   </div>
   <!-- Notificación de actualización -->
   <div id="update-notification" class="fixed bottom-24 right-4 bg-gray-900 border border-neon-pink text-neon-pink px-4 py-2 rounded-lg shadow-lg z-[300] hidden">
-    ¡Nueva versión disponible! <button onclick="location.reload()" class="underline ml-2">Actualizar</button>
+    ¡Nueva versión disponible! <button id="update-btn" class="underline ml-2">Actualizar</button>
   </div>
   <!-- Botón de instalar app -->
   <button id="install-btn" class="fixed bottom-40 right-4 bg-neon-pink text-white px-4 py-2 rounded-lg shadow-lg z-[300] hidden">Instalar App</button>
@@ -536,7 +536,22 @@
 <script>
 // PWA: mostrar botón de instalar
 let deferredPrompt;
+let waitingWorker;
+let refreshing = false;
 const installBtn = document.getElementById('install-btn');
+const updateNotification = document.getElementById('update-notification');
+const updateBtn = document.getElementById('update-btn');
+
+function showUpdateNotification(worker) {
+  waitingWorker = worker;
+  updateNotification.classList.remove('hidden');
+}
+
+updateBtn && updateBtn.addEventListener('click', () => {
+  if (waitingWorker) {
+    waitingWorker.postMessage('SKIP_WAITING');
+  }
+});
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
@@ -568,15 +583,31 @@ function iaAnswer(q) {
 }
 // Notificación de actualización (Service Worker)
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').then(reg => {
+  navigator.serviceWorker.register('./sw.js').then(reg => {
+    if (reg.waiting) {
+      showUpdateNotification(reg.waiting);
+    }
+
     reg.onupdatefound = () => {
       const installing = reg.installing;
+      if (!installing) return;
+
       installing.onstatechange = () => {
         if (installing.state === 'installed' && navigator.serviceWorker.controller) {
-          document.getElementById('update-notification').classList.remove('hidden');
+          showUpdateNotification(installing);
         }
       };
     };
+
+    setInterval(() => {
+      reg.update();
+    }, 60000);
+  });
+
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (refreshing) return;
+    refreshing = true;
+    window.location.reload();
   });
 }
 </script>
