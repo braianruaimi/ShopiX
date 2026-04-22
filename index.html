@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ff2efc">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ShopiX">
+  <link rel="apple-touch-icon" href="images/Gemini_Generated_Image_yp1nmsyp1nmsyp1n.png">
+  <link rel="icon" type="image/png" href="images/Gemini_Generated_Image_yp1nmsyp1nmsyp1n.png">
+  <title>ShopiX - Tu tienda online</title>
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome para icono WhatsApp -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    /* Color rosa neón del logo */
+    .neon-pink {
+      color: #ff2efc;
+    }
+    .border-neon-pink {
+      border-color: #ff2efc !important;
+    }
+    .bg-neon-pink {
+      background-color: #ff2efc !important;
+    }
+    .shadow-neon {
+      text-shadow: 0 0 8px #ff2efc, 0 0 16px #ff2efc99;
+    }
+    .hover\:bg-neon-pink:hover {
+      background-color: #e026e0 !important;
+    }
+    /* Botón flotante */
+    .floating-btn {
+      position: fixed;
+      right: 1.25rem;
+      z-index: 100;
+      box-shadow: 0 4px 16px #0008;
+      transition: transform 0.2s;
+    }
+    .floating-btn:active {
+      transform: scale(0.95);
+    }
+    .floating-wsp {
+      bottom: 1.25rem;
+      background: #18181b;
+      color: #ff2efc;
+      border: 2.5px solid #ff2efc;
+      box-shadow: 0 0 16px 2px #ff2efc99;
+    }
+    .floating-ia {
+      bottom: 5.5rem;
+      background: #18181b;
+      color: #ff2efc;
+      border: 2.5px solid #ff2efc;
+      box-shadow: 0 0 16px 2px #ff2efc99;
+    }
+    .btn-cta {
+      background: #18181b !important;
+      color: #fff !important;
+      border: 2.5px solid #ff2efc !important;
+      box-shadow: 0 0 12px 0 #ff2efc99;
+      transition: box-shadow 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .btn-cta:hover {
+      border-color: #e026e0 !important;
+      box-shadow: 0 0 24px 2px #ff2efc;
+      background: #23232b !important;
+    }
+    @media (max-width: 640px) {
+      .grid-cols-5 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+      .sm\:grid-cols-2 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+      .px-6 { padding-left: 1rem !important; padding-right: 1rem !important; }
+      .py-4 { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
+      .pt-24 { padding-top: 5rem !important; }
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-gray-950/90 backdrop-blur border-b border-gray-800">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <!-- Logo imagen -->
+      <img src="images/Gemini_Generated_Image_yp1nmsyp1nmsyp1n.png" alt="Logo ShopiX" class="h-12 w-auto mr-3 hidden sm:inline-block" style="filter: drop-shadow(0 0 12px #ff2efc);">
+      <h1 class="text-3xl font-bold neon-pink shadow-neon select-none">ShopiX</h1>
+    </div>
+  </header>
+
+  <main class="pt-24 pb-12 max-w-7xl mx-auto px-4 space-y-20">
+    <!-- Electrónica -->
+    <section aria-labelledby="electronica" class="space-y-8">
+      <h2 id="electronica" class="text-2xl font-semibold text-purple-400">Electrónica</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <!-- Producto 1 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Auriculares X5</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Auriculares con cancelación de ruido X5</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Sumérgete en tu música y olvida el ruido exterior. Disfruta de llamadas nítidas y comodidad todo el día. ¡Haz de cada momento una experiencia premium!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$99.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Auriculares%20con%20cancelación%20de%20ruido%20X5" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 2 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Altavoz BoomX</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Altavoz Bluetooth BoomX</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Lleva la fiesta a cualquier lugar con sonido potente y graves profundos. Resistente al agua y batería de larga duración. ¡No dejes que el ritmo pare!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$59.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Altavoz%20Bluetooth%20BoomX" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 3 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Smartwatch FitPro</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Smartwatch deportivo FitPro</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Monitorea tu salud y actividad 24/7. Recibe notificaciones y controla tu música desde tu muñeca. ¡Motívate a lograr tus metas!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$79.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Smartwatch%20deportivo%20FitPro" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 4 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Drone Cam360</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Drone con cámara Cam360</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Captura imágenes aéreas impresionantes y videos en HD. Fácil de manejar y perfecto para aventuras. ¡Vuela y graba recuerdos únicos!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$149.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Drone%20con%20cámara%20Cam360" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 5 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Cámara HomeGuard</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Cámara de seguridad HomeGuard</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Protege tu hogar con visión nocturna y alertas en tiempo real. Instala fácilmente y controla desde tu móvil. ¡Tranquilidad las 24 horas!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$89.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Cámara%20de%20seguridad%20HomeGuard" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Belleza -->
+    <section aria-labelledby="belleza" class="space-y-8">
+      <h2 id="belleza" class="text-2xl font-semibold text-purple-400">Belleza</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <!-- Producto 1 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Kit Facial Glow</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Kit de cuidado facial Glow</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Luce una piel radiante y joven desde la primera aplicación. Fórmulas avanzadas que hidratan y rejuvenecen. ¡Siente la diferencia cada día!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$49.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Kit%20de%20cuidado%20facial%20Glow" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 2 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Secador IonicPro</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Secador de pelo IonicPro</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Seca tu cabello en minutos sin frizz. Tecnología iónica para un brillo espectacular. ¡Luce un peinado de salón todos los días!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$39.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Secador%20de%20pelo%20IonicPro" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 3 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Plancha ProStyle</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Plancha de pelo ProStyle</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Consigue un alisado perfecto y duradero sin dañar tu cabello. Calentamiento rápido y control de temperatura. ¡Transforma tu look en minutos!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$44.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Plancha%20de%20pelo%20ProStyle" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 4 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Set Maquillaje Luxe</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Set de maquillaje Luxe</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Todo lo que necesitas para un look profesional. Colores intensos y larga duración. ¡Resalta tu belleza en cada ocasión!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$59.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Set%20de%20maquillaje%20Luxe" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 5 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Sérum HydraPlus</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Sérum hidratante HydraPlus</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Hidrata profundamente y reduce líneas de expresión. Textura ligera y rápida absorción. ¡Despierta cada día con una piel renovada!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$29.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Sérum%20hidratante%20HydraPlus" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Cuidado Personal -->
+    <section aria-labelledby="cuidado-personal" class="space-y-8">
+      <h2 id="cuidado-personal" class="text-2xl font-semibold text-purple-400">Cuidado Personal</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <!-- Producto 1 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Afeitadora AquaTrim</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Afeitadora eléctrica AquaTrim</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Afeitado suave y sin irritaciones, incluso bajo la ducha. Batería de larga duración y fácil limpieza. ¡Luce impecable cada día!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$34.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Afeitadora%20eléctrica%20AquaTrim" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 2 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Cepillo SonicClean</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Cepillo de dientes SonicClean</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Limpieza profunda y encías saludables con tecnología sónica. Recargable y fácil de usar. ¡Sonríe con confianza todos los días!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$24.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Cepillo%20de%20dientes%20SonicClean" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 3 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Masajeador NeckEase</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Masajeador de cuello NeckEase</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Alivia tensiones y relaja tus músculos en minutos. Portátil y recargable, úsalo en casa o en la oficina. ¡Bienestar al alcance de tu mano!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$39.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Masajeador%20de%20cuello%20NeckEase" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 4 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Báscula SmartFit</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Báscula digital SmartFit</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Controla tu peso y composición corporal con precisión. Sincroniza con tu móvil y sigue tu progreso. ¡Motívate a lograr tus objetivos!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$27.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Báscula%20digital%20SmartFit" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 5 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Aceites ZenSet</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Set de aceites esenciales ZenSet</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Crea un ambiente relajante y mejora tu bienestar. Aromas naturales para cada momento. ¡Transforma tu espacio en un oasis personal!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$19.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Set%20de%20aceites%20esenciales%20ZenSet" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Electrodomésticos -->
+    <section aria-labelledby="electrodomesticos" class="space-y-8">
+      <h2 id="electrodomesticos" class="text-2xl font-semibold text-purple-400">Electrodomésticos</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <!-- Producto 1 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Freidora AirChef</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Freidora de aire AirChef</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Disfruta de comidas crujientes y saludables con menos aceite. Fácil de usar y limpiar. ¡Cocina delicioso en minutos!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$89.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Freidora%20de%20aire%20AirChef" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 2 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Cafetera BaristaPro</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Cafetera express BaristaPro</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Prepara café de calidad profesional en casa. Fácil de usar y con espumador integrado. ¡Despierta cada día con el mejor aroma!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$119.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Cafetera%20express%20BaristaPro" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 3 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Robot CleanBot</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Robot aspirador CleanBot</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Mantén tu hogar limpio sin esfuerzo. Programable y silencioso, limpia mientras disfrutas tu tiempo. ¡Olvídate del polvo!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$199.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Robot%20aspirador%20CleanBot" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 4 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Batidora PowerMix</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Batidora de mano PowerMix</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Prepara batidos, cremas y más con potencia y facilidad. Diseño ergonómico y accesorios incluidos. ¡Haz recetas increíbles!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$34.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Batidora%20de%20mano%20PowerMix" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 5 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Purificador AirPure</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Purificador de aire AirPure</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Respira aire limpio y fresco en casa. Filtra alérgenos y elimina olores. ¡Cuida tu salud y la de tu familia!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$79.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Purificador%20de%20aire%20AirPure" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Celulares -->
+    <section aria-labelledby="celulares" class="space-y-8">
+      <h2 id="celulares" class="text-2xl font-semibold text-purple-400">Celulares</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <!-- Producto 1 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Smartphone NovaX</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Smartphone NovaX</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Pantalla ultra nítida y rendimiento veloz. Disfruta de tus apps y juegos favoritos sin límites. ¡Lleva la innovación en tu bolsillo!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$399.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Smartphone%20NovaX" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 2 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Celular CamPro</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Celular CamPro</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Cámara profesional para fotos y videos increíbles. Captura cada detalle y comparte tus mejores momentos. ¡Haz que cada imagen cuente!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$349.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Celular%20CamPro" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 3 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen PhoneMax Battery</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">PhoneMax Battery</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Batería de larga duración para todo el día. Olvídate de cargar a cada rato y mantente siempre conectado. ¡Energía que te acompaña!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$299.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20PhoneMax%20Battery" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 4 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen MiniGo</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Celular MiniGo</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Compacto, ligero y potente. Perfecto para quienes buscan practicidad sin renunciar al rendimiento. ¡Llévalo a todas partes!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$249.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Celular%20MiniGo" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 5 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen GamerX Pro</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Smartphone GamerX Pro</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Rendimiento extremo para juegos exigentes. Pantalla fluida y controles optimizados. ¡Vive la mejor experiencia gamer móvil!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$499.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Smartphone%20GamerX%20Pro" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Herramientas -->
+    <section aria-labelledby="herramientas" class="space-y-8">
+      <h2 id="herramientas" class="text-2xl font-semibold text-purple-400">Herramientas</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <!-- Producto 1 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Taladro PowerDrill</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Taladro inalámbrico PowerDrill</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Potencia y precisión para tus proyectos. Sin cables y con batería de larga duración. ¡Hazlo tú mismo con facilidad!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$69.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Taladro%20inalámbrico%20PowerDrill" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 2 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Set PrecisionTools</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Set de destornilladores PrecisionTools</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Ideal para electrónica y reparaciones delicadas. Variedad de puntas y estuche portátil. ¡Soluciona cualquier imprevisto!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$24.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Set%20de%20destornilladores%20PrecisionTools" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 3 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Multímetro ProMeter</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Multímetro digital ProMeter</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Diagnostica y mide con precisión. Pantalla clara y funciones avanzadas. ¡Herramienta esencial para profesionales y aficionados!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$34.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Multímetro%20digital%20ProMeter" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 4 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Sierra HandSaw</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Sierra circular HandSaw</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Cortes limpios y rápidos en madera y más. Diseño ergonómico y seguro. ¡Haz tus proyectos realidad sin esfuerzo!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$54.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Sierra%20circular%20HandSaw" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+        <!-- Producto 5 -->
+        <article class="bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
+          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
+            <span class="text-gray-400">Imagen Caja ToolBox Pro</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Caja de herramientas ToolBox Pro</h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">Todo lo que necesitas en un solo lugar. Resistente, organizada y lista para cualquier reto. ¡Lleva tu taller donde quieras!</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$79.99</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Caja%20de%20herramientas%20ToolBox%20Pro" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> Comprar por WhatsApp
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/2215047962" target="_blank" rel="noopener" class="floating-btn floating-wsp flex items-center justify-center rounded-full w-14 h-14 text-3xl" aria-label="WhatsApp ShopiX">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <!-- Botón flotante IA asistente -->
+  <button onclick="openIAChat()" class="floating-btn floating-ia flex items-center justify-center rounded-full w-14 h-14 text-2xl" aria-label="Asistente IA ShopiX">
+    <i class="fas fa-robot"></i>
+  </button>
+  <!-- Modal IA asistente -->
+  <div id="ia-modal" class="fixed inset-0 z-[200] bg-black/60 flex items-center justify-center hidden">
+    <div class="bg-gray-900 border border-neon-pink rounded-xl p-6 max-w-xs w-full relative">
+      <button onclick="closeIAChat()" class="absolute top-2 right-2 text-gray-400 hover:text-neon-pink">&times;</button>
+      <h3 class="text-lg font-bold neon-pink mb-2">Asistente IA ShopiX</h3>
+      <div class="text-sm text-gray-200 mb-3">¿En qué puedo ayudarte? Elige una pregunta frecuente:</div>
+      <ul class="space-y-2">
+        <li><button onclick="iaAnswer('¿Cuáles son los métodos de pago?')" class="underline text-neon-pink">¿Cuáles son los métodos de pago?</button></li>
+        <li><button onclick="iaAnswer('¿Cuánto tarda el envío?')" class="underline text-neon-pink">¿Cuánto tarda el envío?</button></li>
+        <li><button onclick="iaAnswer('¿Tienen garantía los productos?')" class="underline text-neon-pink">¿Tienen garantía los productos?</button></li>
+        <li><button onclick="iaAnswer('¿Cómo hago seguimiento a mi pedido?')" class="underline text-neon-pink">¿Cómo hago seguimiento a mi pedido?</button></li>
+      </ul>
+      <div id="ia-answer" class="mt-4 text-gray-100 text-sm"></div>
+    </div>
+  </div>
+  <!-- Notificación de actualización -->
+  <div id="update-notification" class="fixed bottom-24 right-4 bg-gray-900 border border-neon-pink text-neon-pink px-4 py-2 rounded-lg shadow-lg z-[300] hidden">
+    ¡Nueva versión disponible! <button onclick="location.reload()" class="underline ml-2">Actualizar</button>
+  </div>
+  <!-- Botón de instalar app -->
+  <button id="install-btn" class="fixed bottom-40 right-4 bg-neon-pink text-white px-4 py-2 rounded-lg shadow-lg z-[300] hidden">Instalar App</button>
+  <!-- Footer -->
+  <footer class="w-full bg-gray-950 border-t border-gray-800 py-6 mt-12">
+    <div class="max-w-7xl mx-auto px-6 text-center text-gray-400">
+      &copy; 2026 ShopiX. Todos los derechos reservados.
+    </div>
+  </footer>
+</body>
+<script>
+// PWA: mostrar botón de instalar
+let deferredPrompt;
+const installBtn = document.getElementById('install-btn');
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.style.display = 'block';
+});
+installBtn && installBtn.addEventListener('click', async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') installBtn.style.display = 'none';
+  }
+});
+// Botón IA asistente
+function openIAChat() {
+  document.getElementById('ia-modal').classList.remove('hidden');
+  document.getElementById('ia-answer').innerHTML = '';
+}
+function closeIAChat() {
+  document.getElementById('ia-modal').classList.add('hidden');
+}
+function iaAnswer(q) {
+  let a = '';
+  if (q.includes('pago')) a = 'Aceptamos pagos por transferencia, tarjeta y efectivo contra entrega.';
+  else if (q.includes('envío')) a = 'El envío demora entre 24 y 72 horas hábiles según tu ubicación.';
+  else if (q.includes('garantía')) a = 'Todos los productos tienen garantía mínima de 6 meses.';
+  else if (q.includes('seguimiento')) a = 'Recibirás un enlace de seguimiento por WhatsApp tras tu compra.';
+  else a = '¡Gracias por tu consulta!';
+  document.getElementById('ia-answer').innerHTML = a;
+}
+// Notificación de actualización (Service Worker)
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').then(reg => {
+    reg.onupdatefound = () => {
+      const installing = reg.installing;
+      installing.onstatechange = () => {
+        if (installing.state === 'installed' && navigator.serviceWorker.controller) {
+          document.getElementById('update-notification').classList.remove('hidden');
+        }
+      };
+    };
+  });
+}
+</script>
+</html>
