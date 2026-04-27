@@ -59,6 +59,13 @@ function stopTestimonialsAutoplay() {
   testimonialIntervalId = null;
 }
 
+function updateProductCarousel(track, dots, index) {
+  track.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach((dot, dotIndex) => {
+    dot.classList.toggle('is-active', dotIndex === index);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const installBtn = document.getElementById('install-btn');
   const updateBtn = document.getElementById('update-btn');
@@ -70,8 +77,48 @@ document.addEventListener('DOMContentLoaded', () => {
   const testimonialCards = Array.from(document.querySelectorAll('#testimonials-carousel .testimonial-card'));
   const testimonialDots = Array.from(document.querySelectorAll('#testimonials-dots .carousel-dot'));
   const sectionHeadings = Array.from(document.querySelectorAll('main section[aria-labelledby] h2[id]'));
+  const productInfoOpenButtons = document.querySelectorAll('[data-product-info-open]');
+  const productInfoCloseButtons = document.querySelectorAll('[data-product-info-close]');
+  const productInfoModals = document.querySelectorAll('.product-specs-modal');
 
   document.documentElement.classList.add('reveal-ready');
+
+  document.querySelectorAll('[data-product-carousel]').forEach((carousel) => {
+    const track = carousel.querySelector('[data-carousel-track]');
+    const prevButton = carousel.querySelector('[data-carousel-prev]');
+    const nextButton = carousel.querySelector('[data-carousel-next]');
+    const dots = Array.from(carousel.querySelectorAll('[data-carousel-dot]'));
+
+    if (!track || dots.length === 0) {
+      return;
+    }
+
+    let currentIndex = 0;
+    const lastIndex = dots.length - 1;
+
+    const goToSlide = (index) => {
+      currentIndex = index;
+      updateProductCarousel(track, dots, currentIndex);
+    };
+
+    prevButton?.addEventListener('click', () => {
+      const nextIndex = currentIndex === 0 ? lastIndex : currentIndex - 1;
+      goToSlide(nextIndex);
+    });
+
+    nextButton?.addEventListener('click', () => {
+      const nextIndex = currentIndex === lastIndex ? 0 : currentIndex + 1;
+      goToSlide(nextIndex);
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      dot.addEventListener('click', () => {
+        goToSlide(dotIndex);
+      });
+    });
+
+    updateProductCarousel(track, dots, currentIndex);
+  });
 
   updateBtn?.addEventListener('click', () => {
     if (waitingWorker) {
@@ -113,6 +160,52 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.target === iaModal) {
       iaModal.classList.add('hidden');
     }
+  });
+
+  productInfoOpenButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const modalId = button.getAttribute('data-product-info-open');
+      const modal = modalId ? document.getElementById(modalId) : null;
+      if (!modal) {
+        return;
+      }
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
+  });
+
+  const closeProductModal = (modal) => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  };
+
+  productInfoCloseButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const modal = button.closest('.product-specs-modal');
+      if (modal) {
+        closeProductModal(modal);
+      }
+    });
+  });
+
+  productInfoModals.forEach((modal) => {
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        closeProductModal(modal);
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') {
+      return;
+    }
+
+    productInfoModals.forEach((modal) => {
+      if (!modal.classList.contains('hidden')) {
+        closeProductModal(modal);
+      }
+    });
   });
 
   document.querySelectorAll('[data-ia-question]').forEach((button) => {

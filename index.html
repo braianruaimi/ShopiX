@@ -261,6 +261,177 @@
       width: 100%;
       justify-content: center;
     }
+    .product-media-carousel {
+      position: relative;
+      overflow: hidden;
+    }
+    .product-carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.35s ease;
+      will-change: transform;
+    }
+    .product-carousel-slide {
+      flex: 0 0 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.45rem;
+    }
+    .product-carousel-slide img {
+      width: 100%;
+      height: 100%;
+      max-height: 12.5rem;
+      object-fit: contain;
+      border-radius: 0.8rem;
+    }
+    .product-carousel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2rem;
+      height: 2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(5, 8, 22, 0.72);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(2, 6, 23, 0.42);
+      transition: background 0.2s ease, transform 0.2s ease;
+      z-index: 2;
+    }
+    .product-carousel-control:hover,
+    .product-carousel-control:focus-visible {
+      background: rgba(176, 38, 255, 0.78);
+      transform: translateY(-50%) scale(1.05);
+      outline: none;
+    }
+    .product-carousel-control.prev {
+      left: 0.65rem;
+    }
+    .product-carousel-control.next {
+      right: 0.65rem;
+    }
+    .product-carousel-dots {
+      position: absolute;
+      left: 50%;
+      bottom: 0.75rem;
+      transform: translateX(-50%);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      z-index: 2;
+    }
+    .product-carousel-dot {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 9999px;
+      border: none;
+      background: rgba(255, 255, 255, 0.34);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .product-carousel-dot.is-active {
+      background: #ff2efc;
+      transform: scale(1.18);
+    }
+    .product-price-row {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.65rem;
+    }
+    .product-info-btn {
+      flex: 0 0 auto;
+      padding: 0.45rem 0.8rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06);
+      color: #f9d7ff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+    .product-info-btn:hover,
+    .product-info-btn:focus-visible {
+      background: rgba(255, 46, 252, 0.16);
+      border-color: rgba(255, 46, 252, 0.42);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .product-promo {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.85rem;
+      background: rgba(255, 46, 252, 0.12);
+      border: 1px solid rgba(255, 46, 252, 0.18);
+      color: #ffd9ff;
+      font-size: 0.83rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      text-align: center;
+    }
+    .product-promo:hover,
+    .product-promo:focus-visible {
+      background: rgba(255, 46, 252, 0.18);
+      border-color: rgba(255, 46, 252, 0.34);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .product-promo strong {
+      color: #fff;
+    }
+    .product-specs-modal {
+      background: rgba(2, 6, 23, 0.56);
+      backdrop-filter: blur(10px);
+    }
+    .product-specs-sheet {
+      width: min(90vw, 20.5rem);
+      max-height: min(78vh, 38rem);
+      display: flex;
+      flex-direction: column;
+      border-radius: 1.4rem;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: linear-gradient(180deg, rgba(14, 20, 36, 0.96), rgba(7, 10, 20, 0.94));
+      box-shadow: 0 22px 56px rgba(2, 6, 23, 0.58);
+      overflow: hidden;
+    }
+    .product-specs-content {
+      overflow-y: auto;
+      padding-right: 0.3rem;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 46, 252, 0.6) rgba(255, 255, 255, 0.06);
+    }
+    .product-specs-content::-webkit-scrollbar {
+      width: 0.4rem;
+    }
+    .product-specs-content::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 9999px;
+    }
+    .product-specs-content::-webkit-scrollbar-thumb {
+      background: rgba(255, 46, 252, 0.6);
+      border-radius: 9999px;
+    }
+    .product-specs-list {
+      display: grid;
+      gap: 0.7rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.95rem;
+    }
+    .product-specs-list strong {
+      color: #fff;
+    }
     .hero-shell {
       position: relative;
       padding: 2rem;
@@ -1043,61 +1214,200 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
         <!-- Producto 1 -->
         <article class="product-card bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
-          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
-            <span class="text-gray-400">Imagen Freidora AirChef</span>
+          <div class="product-media-carousel w-full h-48 mb-4" data-product-carousel>
+            <div class="product-carousel-track" data-carousel-track>
+              <div class="product-carousel-slide">
+                <img src="images/licuadora%20mix.webp" alt="Licuadora Smartlife vista principal" loading="lazy">
+              </div>
+              <div class="product-carousel-slide">
+                <img src="images/licuadora%20mix%201.webp" alt="Licuadora Smartlife vista alternativa" loading="lazy">
+              </div>
+            </div>
+            <button type="button" class="product-carousel-control prev" data-carousel-prev aria-label="Imagen anterior">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button type="button" class="product-carousel-control next" data-carousel-next aria-label="Imagen siguiente">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="product-carousel-dots" aria-label="Selector de imágenes">
+              <button type="button" class="product-carousel-dot is-active" data-carousel-dot="0" aria-label="Ver imagen 1"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="1" aria-label="Ver imagen 2"></button>
+            </div>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Freidora de aire AirChef</h3>
-          <p class="text-sm text-gray-300 mb-3 text-center">Comé mejor sin resignar sabor ni tiempo. Prepará cenas rápidas, crocantes y más livianas con una freidora que te resuelve la semana.</p>
-          <span class="text-xl font-bold text-purple-400 mb-3">$89.99</span>
-          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Freidora%20de%20aire%20AirChef" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+          <h3 class="text-lg font-semibold mb-2">Licuadora 1,5 litros Jarra Vidrio Pica Hielo</h3>
+          <p class="text-sm text-gray-300 mb-3 text-left">CUCHILLAS inoxidables desmontables + 600W de potencia. Cuenta con 2 velocidades para triturar la fruta o verdura y, si se desea acelerar el proceso de licuado, girando la perilla a pulso se llegará a la potencia máxima en cuestión de segundos.</p>
+          <div class="product-price-row">
+            <span class="text-xl font-bold text-purple-400">$87.999</span>
+            <button type="button" class="product-info-btn" data-product-info-open="licuadora-smartlife-modal">+info</button>
+          </div>
+          <a href="https://wa.me/2215047962?text=Hola%20ShopiX%20vengo%20de%20la%20web%2C%20Quiero%20llevarme%202%20Licuadora%201%2C5%20litros%20Jarra%20Vidrio%20Pica%20Hielo" target="_blank" rel="noopener" class="product-promo">
+            <i class="fas fa-tags"></i>
+            <span>LLEVATE <strong>2x $154.999</strong></span>
+          </a>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Licuadora%201%2C5%20litros%20Jarra%20Vidrio%20Pica%20Hielo" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
             <i class="fab fa-whatsapp text-lg"></i> ¡Lo quiero! 🚀
           </a>
         </article>
         <!-- Producto 2 -->
         <article class="product-card bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
-          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
-            <span class="text-gray-400">Imagen Cafetera BaristaPro</span>
+          <div class="product-media-carousel w-full h-48 mb-4" data-product-carousel>
+            <div class="product-carousel-track" data-carousel-track>
+              <div class="product-carousel-slide">
+                <img src="images/tostadora%20digital%201.webp" alt="Tostadora Digital Smartlife vista frontal" loading="lazy">
+              </div>
+              <div class="product-carousel-slide">
+                <img src="images/tostadora%20digital%202.webp" alt="Tostadora Digital Smartlife detalle lateral" loading="lazy">
+              </div>
+            </div>
+            <button type="button" class="product-carousel-control prev" data-carousel-prev aria-label="Imagen anterior">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button type="button" class="product-carousel-control next" data-carousel-next aria-label="Imagen siguiente">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="product-carousel-dots" aria-label="Selector de imágenes">
+              <button type="button" class="product-carousel-dot is-active" data-carousel-dot="0" aria-label="Ver imagen 1"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="1" aria-label="Ver imagen 2"></button>
+            </div>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Cafetera express BaristaPro</h3>
-          <p class="text-sm text-gray-300 mb-3 text-center">Si arrancás el día con café, hacelo bien. Esta cafetera te da sabor, aroma y ese ritual premium sin salir de tu cocina.</p>
-          <span class="text-xl font-bold text-purple-400 mb-3">$119.99</span>
-          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Cafetera%20express%20BaristaPro" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+          <h3 class="text-lg font-semibold mb-2">Tostadora Digital Smartlife</h3>
+          <p class="text-sm text-gray-300 mb-3 text-left">¡Personaliza cada rebanada a tu gusto con la nueva tostadora con led digital touch de Smartlife! Perfecta para espacios pequeños, esta tostadora combina eficiencia y versatilidad.</p>
+          <p class="text-sm text-gray-300 mb-4 text-left">¡Se adapta a cualquier familia! Digital touch, función descongelar, función recalentar y cuerpo de acero inoxidable.</p>
+          <div class="product-price-row">
+            <span class="text-xl font-bold text-purple-400">$69.999</span>
+            <button type="button" class="product-info-btn" data-product-info-open="tostadora-smartlife-modal">+info</button>
+          </div>
+          <a href="https://wa.me/2215047962?text=Hola%20ShopiX%20vengo%20de%20la%20web%2C%20Quiero%20llevarme%202%20Tostadora%20Digital%20Smartlife" target="_blank" rel="noopener" class="product-promo">
+            <i class="fas fa-tags"></i>
+            <span>LLEVATE <strong>2x $124.999</strong></span>
+          </a>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Tostadora%20Digital%20Smartlife" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
             <i class="fab fa-whatsapp text-lg"></i> ¡Lo quiero! 🚀
           </a>
         </article>
         <!-- Producto 3 -->
         <article class="product-card bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
-          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
-            <span class="text-gray-400">Imagen Robot CleanBot</span>
+          <div class="product-media-carousel w-full h-48 mb-4" data-product-carousel>
+            <div class="product-carousel-track" data-carousel-track>
+              <div class="product-carousel-slide">
+                <img src="images/sand%201.webp" alt="Sandwichera Oster vista frontal cerrada" loading="lazy">
+              </div>
+              <div class="product-carousel-slide">
+                <img src="images/sand.jpg" alt="Sandwichera Oster abierta" loading="lazy">
+              </div>
+              <div class="product-carousel-slide">
+                <img src="images/sand%20huevo%202.jpg" alt="Sandwichera Oster preparando huevos" loading="lazy">
+              </div>
+              <div class="product-carousel-slide">
+                <img src="images/sand%20descripcion.webp" alt="Sandwichera Oster detalle descriptivo" loading="lazy">
+              </div>
+            </div>
+            <button type="button" class="product-carousel-control prev" data-carousel-prev aria-label="Imagen anterior">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button type="button" class="product-carousel-control next" data-carousel-next aria-label="Imagen siguiente">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="product-carousel-dots" aria-label="Selector de imágenes">
+              <button type="button" class="product-carousel-dot is-active" data-carousel-dot="0" aria-label="Ver imagen 1"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="1" aria-label="Ver imagen 2"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="2" aria-label="Ver imagen 3"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="3" aria-label="Ver imagen 4"></button>
+            </div>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Robot aspirador CleanBot</h3>
-          <p class="text-sm text-gray-300 mb-3 text-center">Ganale tiempo a la rutina dejando que el piso se limpie solo. Menos polvo, menos trabajo y más horas para vos.</p>
-          <span class="text-xl font-bold text-purple-400 mb-3">$199.99</span>
-          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Robot%20aspirador%20CleanBot" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+          <h3 class="text-lg font-semibold mb-2">Sandwichera Oster</h3>
+          <p class="text-sm text-gray-300 mb-3 text-left">Con un diseño exclusivo, la placa inferior tiene más profundidad, lo que permite preparar fácilmente una gran variedad de platos, como sándwiches de hasta 2 panes, tortillas, huevos revueltos, arepas o pancakes. Además, cuenta con un cierre más grande y robusto que bloquea de forma fácil y segura.</p>
+          <p class="text-sm text-gray-300 mb-4 text-left">Por otro lado, ofrece seguridad y facilidad ya que gracias al botón ON/OFF con indicador LED, no tendrás que desenchufarla.</p>
+          <div class="product-price-row">
+            <span class="text-xl font-bold text-purple-400">$59.999</span>
+            <button type="button" class="product-info-btn" data-product-info-open="sandwichera-oster-modal">+info</button>
+          </div>
+          <a href="https://wa.me/2215047962?text=Hola%20ShopiX%20vengo%20de%20la%20web%2C%20Quiero%20llevarme%202%20Sandwichera%20Oster" target="_blank" rel="noopener" class="product-promo">
+            <i class="fas fa-tags"></i>
+            <span>LLEVATE <strong>2x $99.999</strong></span>
+          </a>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Sandwichera%20Oster" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
             <i class="fab fa-whatsapp text-lg"></i> ¡Lo quiero! 🚀
           </a>
         </article>
         <!-- Producto 4 -->
         <article class="product-card bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
-          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
-            <span class="text-gray-400">Imagen Batidora PowerMix</span>
+          <div class="product-media-carousel w-full h-48 mb-4" data-product-carousel>
+            <div class="product-carousel-track" data-carousel-track>
+              <div class="product-carousel-slide">
+                <img src="images/air.webp" alt="Freidora de aire digital tactil vista principal" loading="lazy">
+              </div>
+              <div class="product-carousel-slide">
+                <img src="images/freidora%20aire%201.webp" alt="Freidora de aire digital tactil vista frontal" loading="lazy">
+              </div>
+              <div class="product-carousel-slide">
+                <img src="images/freidora%20aire%202.webp" alt="Freidora de aire digital tactil vista alternativa" loading="lazy">
+              </div>
+            </div>
+            <button type="button" class="product-carousel-control prev" data-carousel-prev aria-label="Imagen anterior">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button type="button" class="product-carousel-control next" data-carousel-next aria-label="Imagen siguiente">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="product-carousel-dots" aria-label="Selector de imágenes">
+              <button type="button" class="product-carousel-dot is-active" data-carousel-dot="0" aria-label="Ver imagen 1"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="1" aria-label="Ver imagen 2"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="2" aria-label="Ver imagen 3"></button>
+            </div>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Batidora de mano PowerMix</h3>
-          <p class="text-sm text-gray-300 mb-3 text-center">Cociná más rápido y con menos complicaciones. Desde un batido hasta una crema, te resuelve recetas sin ocupar media cocina.</p>
-          <span class="text-xl font-bold text-purple-400 mb-3">$34.99</span>
-          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Batidora%20de%20mano%20PowerMix" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+          <h3 class="text-lg font-semibold mb-2">Freidora De Aire Digital Tactil con 8 programas de coccion</h3>
+          <p class="text-sm text-gray-300 mb-4 text-left">Suono freidora de aire combina aire caliente con un ciclo de alta velocidad para proporcionar un calentamiento integral y uniforme de los alimentos. Este proceso de cocción elimina la necesidad de agregar aceite en la mayoría de los alimentos, permitiéndote disfrutar de las comidas más saludables sin sacrificar el sabor.</p>
+          <div class="product-price-row">
+            <span class="text-xl font-bold text-purple-400">$67.999</span>
+            <button type="button" class="product-info-btn" data-product-info-open="freidora-suono-modal">+info</button>
+          </div>
+          <a href="https://wa.me/2215047962?text=Hola%20ShopiX%20vengo%20de%20la%20web%2C%20Quiero%20llevarme%202%20Freidora%20De%20Aire%20Digital%20Tactil%20con%208%20programas%20de%20coccion" target="_blank" rel="noopener" class="product-promo">
+            <i class="fas fa-tags"></i>
+            <span>LLEVATE <strong>2x $114.999</strong></span>
+          </a>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Freidora%20De%20Aire%20Digital%20Tactil%20con%208%20programas%20de%20coccion" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
             <i class="fab fa-whatsapp text-lg"></i> ¡Lo quiero! 🚀
           </a>
         </article>
         <!-- Producto 5 -->
         <article class="product-card bg-gray-900 border border-neon-pink rounded-xl p-5 flex flex-col items-center shadow-md">
-          <div class="w-full h-32 bg-gray-800 flex items-center justify-center rounded-lg mb-4">
-            <span class="text-gray-400">Imagen Purificador AirPure</span>
+          <div class="product-media-carousel w-full h-48 mb-4" data-product-carousel>
+            <div class="product-carousel-track" data-carousel-track>
+              <div class="product-carousel-slide">
+                <img src="images/pava%20.webp" alt="Pava eléctrica Smartlife vista principal" loading="lazy">
+              </div>
+              <div class="product-carousel-slide">
+                <img src="images/pava%201.webp" alt="Pava eléctrica Smartlife vista lateral" loading="lazy">
+              </div>
+              <div class="product-carousel-slide">
+                <img src="images/pava%202.webp" alt="Pava eléctrica Smartlife detalle adicional" loading="lazy">
+              </div>
+            </div>
+            <button type="button" class="product-carousel-control prev" data-carousel-prev aria-label="Imagen anterior">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button type="button" class="product-carousel-control next" data-carousel-next aria-label="Imagen siguiente">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="product-carousel-dots" aria-label="Selector de imágenes">
+              <button type="button" class="product-carousel-dot is-active" data-carousel-dot="0" aria-label="Ver imagen 1"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="1" aria-label="Ver imagen 2"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="2" aria-label="Ver imagen 3"></button>
+            </div>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Purificador de aire AirPure</h3>
-          <p class="text-sm text-gray-300 mb-3 text-center">Sentí el ambiente más limpio desde el primer uso. Ideal si querés bajar olores, polvo y esa sensación pesada dentro de casa.</p>
-          <span class="text-xl font-bold text-purple-400 mb-3">$79.99</span>
-          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Purificador%20de%20aire%20AirPure" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+          <h3 class="text-lg font-semibold mb-2">Pava eléctrica Smartlife , Corte matero.</h3>
+          <p class="text-sm text-gray-300 mb-3 text-left">Cuenta con características destacadas como regulador de temperatura, corte mate, medidor de agua transparente, corte automático, base con giro 360°, enrolla cable y base antideslizante, que la hacen versátil para preparar mate, té o incluso una sopa.</p>
+          <p class="text-sm text-gray-300 mb-4 text-left">La perilla regulable te permite preparar tus infusiones a la temperatura que prefieras, alcanzando incluso el punto de hervor si así lo deseas.</p>
+          <div class="product-price-row">
+            <span class="text-xl font-bold text-purple-400">$44.999</span>
+            <button type="button" class="product-info-btn" data-product-info-open="pava-smartlife-modal">+info</button>
+          </div>
+          <a href="https://wa.me/2215047962?text=Hola%20ShopiX%20vengo%20de%20la%20web%2C%20Quiero%20llevarme%202%20Pava%20el%C3%A9ctrica%20Smartlife%20Corte%20matero" target="_blank" rel="noopener" class="product-promo">
+            <i class="fas fa-tags"></i>
+            <span>LLEVATE <strong>2x $79.999</strong></span>
+          </a>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Pava%20el%C3%A9ctrica%20Smartlife%20Corte%20matero" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
             <i class="fab fa-whatsapp text-lg"></i> ¡Lo quiero! 🚀
           </a>
         </article>
@@ -1266,6 +1576,147 @@
         <li><button data-ia-question="¿Cómo hago seguimiento a mi pedido?" class="underline text-neon-pink">¿Cómo hago seguimiento a mi pedido?</button></li>
       </ul>
       <div id="ia-answer" class="mt-4 text-gray-100 text-sm"></div>
+    </div>
+  </div>
+  <div id="sandwichera-oster-modal" class="product-specs-modal fixed inset-0 z-[210] hidden items-center justify-center px-4">
+    <div class="product-specs-sheet p-6 relative">
+      <button type="button" class="absolute top-3 right-3 text-gray-400 hover:text-white" data-product-info-close aria-label="Cerrar especificaciones">&times;</button>
+      <p class="section-kicker mb-2">Especificaciones</p>
+      <h3 class="text-xl font-semibold text-white mb-4">Sandwichera Oster</h3>
+      <div class="product-specs-content">
+        <div class="product-specs-list">
+          <p><strong>Peso:</strong> 1.31 kg</p>
+          <p><strong>Medidas:</strong> 21.5 cm x 7.8 cm x 22.3 cm</p>
+          <p><strong>Potencia:</strong> 750 W</p>
+          <p><strong>Capacidad de sándwiches:</strong> 2</p>
+          <p><strong>Placas convertibles/removibles:</strong> no</p>
+          <p><strong>Recubrimiento:</strong> Antiadherente</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="tostadora-smartlife-modal" class="product-specs-modal fixed inset-0 z-[210] hidden items-center justify-center px-4">
+    <div class="product-specs-sheet p-6 relative">
+      <button type="button" class="absolute top-3 right-3 text-gray-400 hover:text-white" data-product-info-close aria-label="Cerrar especificaciones">&times;</button>
+      <p class="section-kicker mb-2">Especificaciones</p>
+      <h3 class="text-xl font-semibold text-white mb-4">Tostadora Digital Smartlife</h3>
+      <div class="product-specs-content">
+        <div class="product-specs-list">
+          <p><strong>Material del cuerpo:</strong> Acero inoxidable</p>
+          <p><strong>Altura del paquete:</strong> 22 cm</p>
+          <p><strong>Largo del paquete:</strong> 33.4 cm</p>
+          <p><strong>Peso del paquete:</strong> 1900 g</p>
+          <p><strong>Ancho del paquete:</strong> 21.6 cm</p>
+          <p><strong>Características del producto:</strong> Sin vencimiento</p>
+          <p><strong>Embalaje del envío:</strong> Auto-despachable</p>
+          <p><strong>Potencia:</strong> 800 W</p>
+          <p><strong>Modelo:</strong> SL-TO1520</p>
+          <p><strong>Color:</strong> Gris</p>
+          <p><strong>Funciones:</strong> Descongelar - Tostar - Calentar - Cancelar</p>
+          <p><strong>Capacidad de rodajas:</strong> 2</p>
+          <p><strong>Cantidad de niveles:</strong> 7</p>
+          <p><strong>Con bandeja recoge migas:</strong> Si</p>
+          <p><strong>Marca:</strong> Smartlife</p>
+          <p><strong>Voltaje:</strong> 220v</p>
+          <p><strong>Origen:</strong> Importado</p>
+          <p><strong>Condición del ítem:</strong> Nuevo</p>
+          <p><strong>Garantía:</strong> 2 años</p>
+          <p><strong>Ranura extra ancha:</strong> No</p>
+          <p><strong>Apto pastelería:</strong> No</p>
+          <p><strong>Apto muffin inglés:</strong> No</p>
+          <p><strong>Apto waffle:</strong> No</p>
+          <p><strong>Con indicador luminoso:</strong> Si</p>
+          <p><strong>Con enrollacable en base:</strong> Si</p>
+          <p><strong>Frio al tacto:</strong> Si</p>
+          <p><strong>Peso Product:</strong> 1.8 kg</p>
+          <p><strong>Niveles de tostado:</strong> 7</p>
+          <p><strong>Manual de Instrucciones:</strong> Si</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="licuadora-smartlife-modal" class="product-specs-modal fixed inset-0 z-[210] hidden items-center justify-center px-4">
+    <div class="product-specs-sheet p-6 relative">
+      <button type="button" class="absolute top-3 right-3 text-gray-400 hover:text-white" data-product-info-close aria-label="Cerrar especificaciones">&times;</button>
+      <p class="section-kicker mb-2">Especificaciones</p>
+      <h3 class="text-xl font-semibold text-white mb-4">Licuadora 1,5 litros Jarra Vidrio Pica Hielo</h3>
+      <div class="product-specs-content">
+        <div class="product-specs-list">
+          <p><strong>Altura del paquete:</strong> 18.4 cm</p>
+          <p><strong>Largo del paquete:</strong> 38.8 cm</p>
+          <p><strong>Peso del paquete:</strong> 3400 g</p>
+          <p><strong>Ancho del paquete:</strong> 22 cm</p>
+          <p><strong>Características del producto:</strong> Frágil, Sin vencimiento</p>
+          <p><strong>Embalaje del envío:</strong> Auto-despachable</p>
+          <p><strong>Es apta para picar hielo:</strong> No</p>
+          <p><strong>Es apta para lavavajillas:</strong> No</p>
+          <p><strong>Capacidad útil:</strong> 1.5 L</p>
+          <p><strong>Potencia:</strong> 600 W</p>
+          <p><strong>Modelo:</strong> SL-BL1055PN</p>
+          <p><strong>Usos recomendados:</strong> Domestico</p>
+          <p><strong>Cantidad de velocidades:</strong> 5</p>
+          <p><strong>Es industrial:</strong> No</p>
+          <p><strong>Cantidad de accesorios:</strong> 3</p>
+          <p><strong>Material de la jarra:</strong> Vidrio</p>
+          <p><strong>Con botón de encendido/apagado:</strong> Sí</p>
+          <p><strong>Es portátil:</strong> Sí</p>
+          <p><strong>Con carga USB:</strong> No</p>
+          <p><strong>Piezas No aptas para lavavajillas:</strong> No</p>
+          <p><strong>Etiqueta de eficiencia energética:</strong> 600 W</p>
+          <p><strong>Capacidad total:</strong> 1.5 L</p>
+          <p><strong>Marca:</strong> Smartlife</p>
+          <p><strong>Línea:</strong> Licuadoras</p>
+          <p><strong>Voltaje:</strong> 220V</p>
+          <p><strong>Color principal:</strong> Negro</p>
+          <p><strong>Número de certificado de seguridad eléctrica:</strong> M08795-R2</p>
+          <p><strong>Organismo de certificación (OCP):</strong> Net Connection International S.R.L. (NCC)</p>
+          <p><strong>Origen:</strong> Nacional</p>
+          <p><strong>Condición del ítem:</strong> Nuevo</p>
+          <p><strong>Accesorios incluidos:</strong> Jarra de vidrio con tapa y medidor</p>
+          <p><strong>Capacidad en volumen:</strong> 1.5 L</p>
+          <p><strong>Es libre de BPA:</strong> No</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="freidora-suono-modal" class="product-specs-modal fixed inset-0 z-[210] hidden items-center justify-center px-4">
+    <div class="product-specs-sheet p-6 relative">
+      <button type="button" class="absolute top-3 right-3 text-gray-400 hover:text-white" data-product-info-close aria-label="Cerrar especificaciones">&times;</button>
+      <p class="section-kicker mb-2">Especificaciones</p>
+      <h3 class="text-xl font-semibold text-white mb-4">Freidora De Aire Digital Tactil con 8 programas de coccion</h3>
+      <div class="product-specs-content">
+        <div class="product-specs-list">
+          <p><strong>Potencia:</strong> 1400 W</p>
+          <p><strong>Panel:</strong> Digital con control táctil</p>
+          <p><strong>Capacidad:</strong> Compartimiento 3.2 Litros</p>
+          <p><strong>Funciones:</strong> 8 programas</p>
+          <p><strong>Temporizador:</strong> 0 a 60 minutos</p>
+          <p><strong>Temperatura:</strong> 80° a 200° centígrados</p>
+          <p><strong>Material Interior:</strong> Antiadherente</p>
+          <p><strong>Manija:</strong> Fría al tacto</p>
+          <p><strong>Rejilla:</strong> Aptas lavavajillas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="pava-smartlife-modal" class="product-specs-modal fixed inset-0 z-[210] hidden items-center justify-center px-4">
+    <div class="product-specs-sheet p-6 relative">
+      <button type="button" class="absolute top-3 right-3 text-gray-400 hover:text-white" data-product-info-close aria-label="Cerrar especificaciones">&times;</button>
+      <p class="section-kicker mb-2">Especificaciones</p>
+      <h3 class="text-xl font-semibold text-white mb-4">Pava eléctrica Smartlife , Corte matero.</h3>
+      <div class="product-specs-content">
+        <div class="product-specs-list">
+          <p><strong>Lo que tenés que saber de este producto</strong></p>
+          <p><strong>Voltaje:</strong> 220V</p>
+          <p><strong>Capacidad:</strong> 1.7 litros</p>
+          <p><strong>Apagado automático:</strong> Sí</p>
+          <p><strong>Indicador de nivel del agua:</strong> Sí</p>
+          <p><strong>Función mate:</strong> Sí</p>
+          <p><strong>Incluye filtro:</strong> Sí</p>
+          <p><strong>Tecnología y rapidez:</strong> Para tus infusiones</p>
+          <p><strong>Potencia:</strong> 1.85 kW</p>
+        </div>
+      </div>
     </div>
   </div>
   <!-- Notificación de actualización -->
