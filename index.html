@@ -278,6 +278,22 @@
       justify-content: center;
       padding: 0.45rem;
     }
+    .zoomable-image-trigger {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: zoom-in;
+    }
+    .zoomable-image-trigger:focus-visible {
+      outline: 2px solid rgba(255, 46, 252, 0.7);
+      outline-offset: 2px;
+      border-radius: 0.8rem;
+    }
     .product-carousel-slide img {
       width: 100%;
       height: 100%;
@@ -394,6 +410,40 @@
     .product-specs-modal {
       background: rgba(2, 6, 23, 0.56);
       backdrop-filter: blur(10px);
+    }
+    .image-zoom-modal {
+      background: rgba(2, 6, 23, 0.82);
+      backdrop-filter: blur(12px);
+    }
+    .image-zoom-sheet {
+      position: relative;
+      width: min(92vw, 56rem);
+      max-height: 88vh;
+      padding: 1rem;
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: linear-gradient(180deg, rgba(14, 20, 36, 0.96), rgba(7, 10, 20, 0.94));
+      box-shadow: 0 22px 56px rgba(2, 6, 23, 0.58);
+    }
+    .image-zoom-sheet img {
+      width: 100%;
+      max-height: calc(88vh - 2rem);
+      object-fit: contain;
+      border-radius: 1rem;
+    }
+    .image-zoom-close {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(5, 8, 22, 0.72);
+      color: #fff;
     }
     .product-specs-sheet {
       width: min(90vw, 20.5rem);
@@ -850,6 +900,7 @@
           <h1 class="brand-neon text-3xl font-bold select-none">ShopiX</h1>
         </div>
         <nav class="category-nav" aria-label="Categorías destacadas">
+          <a href="#lo-mas-vendido" class="category-link" data-category-link="lo-mas-vendido">Lo+Vendido</a>
           <a href="#electronica" class="category-link is-active" data-category-link="electronica">Electrónica</a>
           <a href="#belleza" class="category-link" data-category-link="belleza">Belleza</a>
           <a href="#cuidado-personal" class="category-link" data-category-link="cuidado-personal">Cuidado Personal</a>
@@ -862,6 +913,137 @@
   </header>
 
   <main class="pt-36 pb-12 max-w-7xl mx-auto px-4 space-y-20 sm:pt-40">
+    <section aria-labelledby="lo-mas-vendido" class="space-y-8 section-panel" data-reveal style="--reveal-delay: 0ms;">
+      <div class="space-y-2">
+        <p class="section-kicker">Best Sellers</p>
+        <h2 id="lo-mas-vendido" class="text-2xl font-semibold text-purple-300">LO+VENDIDO</h2>
+      </div>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <article class="product-card rounded-2xl p-5 flex flex-col shadow-md">
+          <div class="product-media-carousel w-full h-44 mb-4 rounded-2xl border border-white/10 bg-white/5" data-product-carousel data-carousel-autoplay="2000">
+            <div class="product-carousel-track" data-carousel-track>
+              <div class="product-carousel-slide">
+                <button type="button" class="zoomable-image-trigger" data-image-zoom="images/LO+VENDIDO/01Espumador%20El%C3%A9ctrico%20De%20Caf%C3%A9%20Batidor%20Leche%20Huevos%20Cremas%20Usb.jfif" data-image-zoom-alt="Espumador electrico para cafe vista 1" aria-label="Ampliar imagen 1 del espumador electrico para cafe">
+                  <img src="images/LO+VENDIDO/01Espumador%20El%C3%A9ctrico%20De%20Caf%C3%A9%20Batidor%20Leche%20Huevos%20Cremas%20Usb.jfif" alt="Espumador electrico para cafe vista 1" class="h-full w-full object-contain" loading="lazy">
+                </button>
+              </div>
+              <div class="product-carousel-slide">
+                <button type="button" class="zoomable-image-trigger" data-image-zoom="images/LO+VENDIDO/02Mixer%20batedor%20recargable.jfif" data-image-zoom-alt="Espumador electrico para cafe vista 2" aria-label="Ampliar imagen 2 del espumador electrico para cafe">
+                  <img src="images/LO+VENDIDO/02Mixer%20batedor%20recargable.jfif" alt="Espumador electrico para cafe vista 2" class="h-full w-full object-contain" loading="lazy">
+                </button>
+              </div>
+            </div>
+            <div class="product-carousel-dots" aria-label="Selector de imagenes">
+              <button type="button" class="product-carousel-dot is-active" data-carousel-dot="0" aria-label="Ver imagen 1"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="1" aria-label="Ver imagen 2"></button>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Espumador Eléctrico De Café Batidor Leche Huevos Cremas Usb</h3>
+          <p class="text-sm text-gray-300 mb-3">Batidor Espumador de Cafe y Crema Recargable: eleva tus bebidas y postres con un diseno portatil, multiusos y facil de usar. Recargable por USB, ideal para generar espuma en cafe, batir tragos, cremas y mas. Incluye boton ON/OFF con tres velocidades, mango ergonomico de 17,5 cm, tamano compacto y cable de carga USB para llevarlo en mochila o bolso.</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$13.699</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Espumador%20El%C3%A9ctrico%20De%20Caf%C3%A9%20Batidor%20Leche%20Huevos%20Cremas%20Usb" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> ¡Lo quiero! 🚀
+          </a>
+        </article>
+        <article class="product-card rounded-2xl p-5 flex flex-col shadow-md">
+          <div class="product-media-carousel w-full h-44 mb-4 rounded-2xl border border-white/10 bg-white/5" data-product-carousel data-carousel-autoplay="2000">
+            <div class="product-carousel-track" data-carousel-track>
+              <div class="product-carousel-slide">
+                <button type="button" class="zoomable-image-trigger" data-image-zoom="images/LO+VENDIDO/03DispositivoPort%C3%A1til.jpg" data-image-zoom-alt="Dispositivo portatil para dormir vista 1" aria-label="Ampliar imagen 1 del dispositivo portatil para dormir">
+                  <img src="images/LO+VENDIDO/03DispositivoPort%C3%A1til.jpg" alt="Dispositivo portatil para dormir vista 1" class="h-full w-full object-contain" loading="lazy">
+                </button>
+              </div>
+              <div class="product-carousel-slide">
+                <button type="button" class="zoomable-image-trigger" data-image-zoom="images/LO+VENDIDO/04.webp" data-image-zoom-alt="Dispositivo portatil para dormir vista 2" aria-label="Ampliar imagen 2 del dispositivo portatil para dormir">
+                  <img src="images/LO+VENDIDO/04.webp" alt="Dispositivo portatil para dormir vista 2" class="h-full w-full object-contain" loading="lazy">
+                </button>
+              </div>
+              <div class="product-carousel-slide">
+                <button type="button" class="zoomable-image-trigger" data-image-zoom="images/LO+VENDIDO/05.webp" data-image-zoom-alt="Dispositivo portatil para dormir vista 3" aria-label="Ampliar imagen 3 del dispositivo portatil para dormir">
+                  <img src="images/LO+VENDIDO/05.webp" alt="Dispositivo portatil para dormir vista 3" class="h-full w-full object-contain" loading="lazy">
+                </button>
+              </div>
+            </div>
+            <div class="product-carousel-dots" aria-label="Selector de imagenes">
+              <button type="button" class="product-carousel-dot is-active" data-carousel-dot="0" aria-label="Ver imagen 1"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="1" aria-label="Ver imagen 2"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="2" aria-label="Ver imagen 3"></button>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Dispositivo Portátil Para Dormir Relajación-Insomnio-Ansiedad</h3>
+          <p class="text-sm text-gray-300 mb-3">Este dispositivo portatil utiliza micro pulsaciones EMS para ayudarte a conciliar el sueno de manera mas rapida y natural, reducir el estres y la ansiedad, y mejorar la calidad del sueno sin farmacos ni efectos secundarios. Las micro pulsaciones electricas actuan sobre puntos nerviosos vinculados con la relajacion, ayudando a calmar el sistema nervioso, relajar los musculos y facilitar un descanso mas profundo.</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$35.399</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Dispositivo%20Port%C3%A1til%20Para%20Dormir%20Relajaci%C3%B3n-Insomnio-Ansiedad" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> ¡Lo quiero! 🚀
+          </a>
+        </article>
+        <article class="product-card rounded-2xl p-5 flex flex-col shadow-md">
+          <div class="product-media-carousel w-full h-44 mb-4 rounded-2xl border border-white/10 bg-white/5" data-product-carousel data-carousel-autoplay="2000">
+            <div class="product-carousel-track" data-carousel-track>
+              <div class="product-carousel-slide">
+                <button type="button" class="zoomable-image-trigger" data-image-zoom="images/LO+VENDIDO/06.jfif" data-image-zoom-alt="Linterna portatil tactica vista 1" aria-label="Ampliar imagen 1 de la linterna portatil tactica">
+                  <img src="images/LO+VENDIDO/06.jfif" alt="Linterna portatil tactica vista 1" class="h-full w-full object-contain" loading="lazy">
+                </button>
+              </div>
+              <div class="product-carousel-slide">
+                <button type="button" class="zoomable-image-trigger" data-image-zoom="images/LO+VENDIDO/07.webp" data-image-zoom-alt="Linterna portatil tactica vista 2" aria-label="Ampliar imagen 2 de la linterna portatil tactica">
+                  <img src="images/LO+VENDIDO/07.webp" alt="Linterna portatil tactica vista 2" class="h-full w-full object-contain" loading="lazy">
+                </button>
+              </div>
+              <div class="product-carousel-slide">
+                <button type="button" class="zoomable-image-trigger" data-image-zoom="images/LO+VENDIDO/08.webp" data-image-zoom-alt="Linterna portatil tactica vista 3" aria-label="Ampliar imagen 3 de la linterna portatil tactica">
+                  <img src="images/LO+VENDIDO/08.webp" alt="Linterna portatil tactica vista 3" class="h-full w-full object-contain" loading="lazy">
+                </button>
+              </div>
+            </div>
+            <div class="product-carousel-dots" aria-label="Selector de imagenes">
+              <button type="button" class="product-carousel-dot is-active" data-carousel-dot="0" aria-label="Ver imagen 1"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="1" aria-label="Ver imagen 2"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="2" aria-label="Ver imagen 3"></button>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">XPE Mini Linterna Portátil Táctica Led Recargable Usb Zoom</h3>
+          <p class="text-sm text-gray-300 mb-3">Disfruta de contar con la linterna ideal para todas tus necesidades. Fabricada con materiales resistentes y de calidad, se adapta a situaciones donde necesites buena iluminacion. Su zoom integrado permite manejar la apertura de la luz para lograr maximo enfoque y claridad. Ademas, es resistente al agua y a situaciones climaticas adversas, por lo que es una gran opcion para tener en el hogar.</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$11.299</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20XPE%20Mini%20Linterna%20Port%C3%A1til%20T%C3%A1ctica%20Led%20Recargable%20Usb%20Zoom" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> ¡Lo quiero! 🚀
+          </a>
+        </article>
+        <article class="product-card rounded-2xl p-5 flex flex-col shadow-md">
+          <div class="product-media-carousel w-full h-44 mb-4 rounded-2xl border border-white/10 bg-white/5" data-product-carousel data-carousel-autoplay="2000">
+            <div class="product-carousel-track" data-carousel-track>
+              <div class="product-carousel-slide">
+                <button type="button" class="zoomable-image-trigger" data-image-zoom="images/LO+VENDIDO/09pava.webp" data-image-zoom-alt="Anafe camping vista 1" aria-label="Ampliar imagen 1 del anafe camping">
+                  <img src="images/LO+VENDIDO/09pava.webp" alt="Anafe camping vista 1" class="h-full w-full object-contain" loading="lazy">
+                </button>
+              </div>
+              <div class="product-carousel-slide">
+                <button type="button" class="zoomable-image-trigger" data-image-zoom="images/LO+VENDIDO/10anafe.webp" data-image-zoom-alt="Anafe camping vista 2" aria-label="Ampliar imagen 2 del anafe camping">
+                  <img src="images/LO+VENDIDO/10anafe.webp" alt="Anafe camping vista 2" class="h-full w-full object-contain" loading="lazy">
+                </button>
+              </div>
+              <div class="product-carousel-slide">
+                <button type="button" class="zoomable-image-trigger" data-image-zoom="images/LO+VENDIDO/11anafe.webp" data-image-zoom-alt="Anafe camping vista 3" aria-label="Ampliar imagen 3 del anafe camping">
+                  <img src="images/LO+VENDIDO/11anafe.webp" alt="Anafe camping vista 3" class="h-full w-full object-contain" loading="lazy">
+                </button>
+              </div>
+            </div>
+            <div class="product-carousel-dots" aria-label="Selector de imagenes">
+              <button type="button" class="product-carousel-dot is-active" data-carousel-dot="0" aria-label="Ver imagen 1"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="1" aria-label="Ver imagen 2"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="2" aria-label="Ver imagen 3"></button>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Anafe Camping 11x9cm</h3>
+          <p class="text-sm text-gray-300 mb-3">El anafe cocina camping portatil es perfecto para tus aventuras al aire libre. Con su diseno plegable y portatil, podras llevarlo contigo a cualquier lugar. Su llama ajustable te permitira cocinar tus alimentos a la temperatura ideal. Ademas, su color plata le da un toque moderno y elegante.</p>
+          <span class="text-xl font-bold text-purple-400 mb-3">$19.999</span>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Anafe%20Camping%2011x9cm" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+            <i class="fab fa-whatsapp text-lg"></i> ¡Lo quiero! 🚀
+          </a>
+        </article>
+      </div>
+    </section>
+
     <section class="hero-shell" data-reveal style="--reveal-delay: 0ms;">
       <div class="hero-grid">
         <div class="space-y-8 relative z-10">
@@ -1004,13 +1186,33 @@
       <div class="bento-grid grid grid-cols-1 sm:grid-cols-2 gap-6">
         <!-- Producto 1 -->
         <article class="bento-hero lg:col-span-2 lg:row-span-2 rounded-2xl p-6 flex flex-col shadow-md">
-          <div class="w-full h-56 flex items-center justify-center rounded-2xl mb-5">
-            <span class="text-gray-400">Imagen Auriculares X5</span>
+          <div class="product-media-carousel w-full h-56 mb-5" data-product-carousel>
+            <div class="product-carousel-track" data-carousel-track>
+              <div class="product-carousel-slide">
+                <img src="images/lenovo.webp" alt="Auriculares Lenovo con cancelación de ruido vista principal" loading="lazy">
+              </div>
+              <div class="product-carousel-slide">
+                <img src="images/lenovo%202.webp" alt="Auriculares Lenovo con cancelación de ruido vista alternativa" loading="lazy">
+              </div>
+            </div>
+            <button type="button" class="product-carousel-control prev" data-carousel-prev aria-label="Imagen anterior">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button type="button" class="product-carousel-control next" data-carousel-next aria-label="Imagen siguiente">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="product-carousel-dots" aria-label="Selector de imágenes">
+              <button type="button" class="product-carousel-dot is-active" data-carousel-dot="0" aria-label="Ver imagen 1"></button>
+              <button type="button" class="product-carousel-dot" data-carousel-dot="1" aria-label="Ver imagen 2"></button>
+            </div>
           </div>
-          <h3 class="text-xl font-semibold mb-2">Auriculares con cancelación de ruido X5</h3>
+          <h3 class="text-xl font-semibold mb-2">Auriculares Lenovo con cancelación de ruido</h3>
           <p class="text-sm text-gray-300 mb-3">Bloquea el caos, entra en foco y disfrutá un sonido que te sube el nivel desde el primer segundo. Ideal para trabajar, entrenar o viajar sin interrupciones.</p>
-          <span class="text-xl font-bold text-purple-400 mb-3">$99.99</span>
-          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Auriculares%20con%20cancelación%20de%20ruido%20X5" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
+          <div class="product-price-row">
+            <span class="text-xl font-bold text-purple-400">$99.99</span>
+            <button type="button" class="product-info-btn" data-product-info-open="auriculares-lenovo-modal">+info</button>
+          </div>
+          <a href="https://wa.me/2215047962?text=Hola,%20me%20interesa%20el%20producto%20Auriculares%20Lenovo%20con%20cancelaci%C3%B3n%20de%20ruido" target="_blank" rel="noopener" class="btn-cta flex items-center gap-2 font-semibold px-4 py-2 rounded-lg shadow-md mt-auto">
             <i class="fab fa-whatsapp text-lg"></i> ¡Lo quiero! 🚀
           </a>
         </article>
@@ -1578,6 +1780,12 @@
       <div id="ia-answer" class="mt-4 text-gray-100 text-sm"></div>
     </div>
   </div>
+  <div id="image-zoom-modal" class="image-zoom-modal fixed inset-0 z-[215] hidden items-center justify-center p-4">
+    <div class="image-zoom-sheet">
+      <button type="button" id="image-zoom-close" class="image-zoom-close" aria-label="Cerrar imagen ampliada">&times;</button>
+      <img id="image-zoom-target" src="" alt="">
+    </div>
+  </div>
   <div id="sandwichera-oster-modal" class="product-specs-modal fixed inset-0 z-[210] hidden items-center justify-center px-4">
     <div class="product-specs-sheet p-6 relative">
       <button type="button" class="absolute top-3 right-3 text-gray-400 hover:text-white" data-product-info-close aria-label="Cerrar especificaciones">&times;</button>
@@ -1715,6 +1923,22 @@
           <p><strong>Incluye filtro:</strong> Sí</p>
           <p><strong>Tecnología y rapidez:</strong> Para tus infusiones</p>
           <p><strong>Potencia:</strong> 1.85 kW</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="auriculares-lenovo-modal" class="product-specs-modal fixed inset-0 z-[210] hidden items-center justify-center px-4">
+    <div class="product-specs-sheet p-6 relative">
+      <button type="button" class="absolute top-3 right-3 text-gray-400 hover:text-white" data-product-info-close aria-label="Cerrar especificaciones">&times;</button>
+      <p class="section-kicker mb-2">Especificaciones</p>
+      <h3 class="text-xl font-semibold text-white mb-4">Auriculares Lenovo con cancelación de ruido</h3>
+      <div class="product-specs-content">
+        <div class="product-specs-list">
+          <p><strong>Cantidad de pares:</strong> 1</p>
+          <p><strong>Formato:</strong> Monoaural</p>
+          <p><strong>Tecnología:</strong> True Wireless</p>
+          <p><strong>Cancelación de ruido:</strong> Sí</p>
+          <p><strong>Incluye micrófono:</strong> Sí</p>
         </div>
       </div>
     </div>

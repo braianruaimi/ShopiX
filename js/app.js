@@ -66,6 +66,35 @@ function updateProductCarousel(track, dots, index) {
   });
 }
 
+function startProductCarouselAutoplay(carousel, goToSlide, slideCount) {
+  const autoplayDelay = Number(carousel.getAttribute('data-carousel-autoplay'));
+
+  if (prefersReducedMotion || slideCount <= 1 || !Number.isFinite(autoplayDelay) || autoplayDelay <= 0) {
+    return;
+  }
+
+  let autoplayId = window.setInterval(() => {
+    goToSlide();
+  }, autoplayDelay);
+
+  const restartAutoplay = () => {
+    window.clearInterval(autoplayId);
+    autoplayId = window.setInterval(() => {
+      goToSlide();
+    }, autoplayDelay);
+  };
+
+  carousel.addEventListener('mouseenter', () => {
+    window.clearInterval(autoplayId);
+  });
+
+  carousel.addEventListener('mouseleave', restartAutoplay);
+  carousel.addEventListener('focusin', () => {
+    window.clearInterval(autoplayId);
+  });
+  carousel.addEventListener('focusout', restartAutoplay);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const installBtn = document.getElementById('install-btn');
   const updateBtn = document.getElementById('update-btn');
@@ -80,8 +109,42 @@ document.addEventListener('DOMContentLoaded', () => {
   const productInfoOpenButtons = document.querySelectorAll('[data-product-info-open]');
   const productInfoCloseButtons = document.querySelectorAll('[data-product-info-close]');
   const productInfoModals = document.querySelectorAll('.product-specs-modal');
+  const imageZoomTriggers = document.querySelectorAll('[data-image-zoom]');
+  const imageZoomModal = document.getElementById('image-zoom-modal');
+  const imageZoomTarget = document.getElementById('image-zoom-target');
+  const imageZoomCloseButton = document.getElementById('image-zoom-close');
 
   document.documentElement.classList.add('reveal-ready');
+
+  const closeImageZoomModal = () => {
+    imageZoomModal?.classList.add('hidden');
+    imageZoomModal?.classList.remove('flex');
+    if (imageZoomTarget) {
+      imageZoomTarget.removeAttribute('src');
+      imageZoomTarget.alt = '';
+    }
+  };
+
+  imageZoomTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      if (!imageZoomModal || !imageZoomTarget) {
+        return;
+      }
+
+      imageZoomTarget.src = trigger.getAttribute('data-image-zoom') || '';
+      imageZoomTarget.alt = trigger.getAttribute('data-image-zoom-alt') || '';
+      imageZoomModal.classList.remove('hidden');
+      imageZoomModal.classList.add('flex');
+    });
+  });
+
+  imageZoomCloseButton?.addEventListener('click', closeImageZoomModal);
+
+  imageZoomModal?.addEventListener('click', (event) => {
+    if (event.target === imageZoomModal) {
+      closeImageZoomModal();
+    }
+  });
 
   document.querySelectorAll('[data-product-carousel]').forEach((carousel) => {
     const track = carousel.querySelector('[data-carousel-track]');
@@ -96,8 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     const lastIndex = dots.length - 1;
 
-    const goToSlide = (index) => {
-      currentIndex = index;
+    const goToSlide = (index = currentIndex + 1) => {
+      currentIndex = index < 0 ? lastIndex : index > lastIndex ? 0 : index;
       updateProductCarousel(track, dots, currentIndex);
     };
 
@@ -118,6 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     updateProductCarousel(track, dots, currentIndex);
+    startProductCarouselAutoplay(carousel, goToSlide, dots.length);
   });
 
   updateBtn?.addEventListener('click', () => {
@@ -199,6 +263,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') {
       return;
+    }
+
+    if (imageZoomModal && !imageZoomModal.classList.contains('hidden')) {
+      closeImageZoomModal();
     }
 
     productInfoModals.forEach((modal) => {

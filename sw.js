@@ -1,4 +1,4 @@
-const STATIC_CACHE = 'shopix-static-v3';
+const STATIC_CACHE = 'shopix-static-v4';
 const APP_SHELL = [
   './',
   './index.html',
@@ -52,6 +52,21 @@ self.addEventListener('fetch', event => {
   const isSameOrigin = requestUrl.origin === self.location.origin;
 
   if (!isSameOrigin) {
+    return;
+  }
+
+  if (request.destination === 'image') {
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          if (response && response.status === 200) {
+            const copy = response.clone();
+            caches.open(STATIC_CACHE).then(cache => cache.put(request, copy));
+          }
+          return response;
+        })
+        .catch(() => caches.match(request))
+    );
     return;
   }
 
